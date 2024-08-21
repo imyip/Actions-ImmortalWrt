@@ -132,6 +132,7 @@ jobs:
       run: |
         cd ImmortalWrt/bin/targets/*/*
         rm -rf packages
+        zip -r kmods.zip kmods
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
@@ -173,6 +174,7 @@ jobs:
         files: |
           ${{ env.FIRMWARE }}/*factory.bin
           ${{ env.FIRMWARE }}/*sysupgrade.bin
+          ${{ env.FIRMWARE }}/kmods.zip
           ImmortalWrt/build.config
 
     - name: Delete workflow runs
