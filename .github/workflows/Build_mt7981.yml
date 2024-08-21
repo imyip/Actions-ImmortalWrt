@@ -132,7 +132,7 @@ jobs:
       run: |
         cd ImmortalWrt/bin/targets/*/*
         rm -rf packages
-        zip -r kmods.zip kmods
+        zip -r -y kmods.zip kmods/
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
